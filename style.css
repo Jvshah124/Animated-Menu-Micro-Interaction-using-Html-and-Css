@@ -1,0 +1,76 @@
+/* Hide the checkbox */
+.menu-container {
+  display: none;
+}
+
+/* Style for the icon container */
+.icon-container {
+  cursor: pointer;
+  user-select: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+}
+
+/* Style for the bars in the icon */
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Styles when the checkbox is checked */
+.menu-container:checked + .icon-container .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-container:checked + .icon-container .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-container:checked + .icon-container .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Additional styles for the menu items */
+.menu-items {
+  display: none;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  background: url("https://img.freepik.com/free-vector/tornado-storm-cyclone-autumn-road-vector-landscape-hurricane-wind-weather-environmental-scene-with-nature-phenomenon-fall-season-game-location-panorama-with-nobody-asphalt-pathway-desert_107791-24133.jpg?w=1060&t=st=1702389539~exp=1702390139~hmac=2a8daed59b96dba0010b41fb8ea7c195a482833f08cb95aa496aa5c84fcecfb8")
+    no-repeat center center/cover;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 0;
+}
+
+.menu-container:checked + .icon-container ~ .menu-items {
+  display: block;
+}
+
+.menu-items a {
+  display: block;
+  padding: 5px 10px;
+  margin: 1rem;
+  max-width: 55px;
+  text-align: center;
+  border: 1px solid #c3c3c3;
+  border-radius: 11px;
+  text-decoration: none;
+  background-color: #1b1b1b;
+  color: #ffff;
+  /* color: #333; */
+  transition: 0.4s;
+}
+
+.menu-items a:hover {
+  transform: translateY(-5px);
+  box-shadow: 3px 3px 11px #c3c3c3;
+  background-color: transparent;
+}
